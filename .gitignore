@@ -160,9 +160,6 @@ $RECYCLE.BIN/
 
 /tmp
 
-/configs/*
-!/configs/*.example.*
-
 /certs
 
 /api/docs.go
