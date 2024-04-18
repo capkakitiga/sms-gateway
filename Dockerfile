@@ -14,8 +14,8 @@ RUN go mod download
 COPY . .
 
 # Builds the application as a staticly linked one, to allow it to run on alpine
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o app .
-# RUN CGO_ENABLED=0 go build -a -installsuffix cgo -o app ./cmd/${APP}/main.go
+# RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o app .
+RUN CGO_ENABLED=0 go build -a -installsuffix cgo -o app ./cmd/${APP}/main.go
 
 # Build MkDocs
 FROM squidfunk/mkdocs-material:9.5.15 AS mkdocs
